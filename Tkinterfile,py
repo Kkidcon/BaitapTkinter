@@ -1,0 +1,31 @@
+from tkinter import *
+from tkinter import messagebox
+
+def click():
+    user = userName.getvar()
+    pas = passWord.getvar()
+    if user == 'Bui Pham Nam Khanh' and pas == '123456789':
+        messagebox.showinfo('Thông báo', 'Đăng nhập thành công!')
+    else:
+        messagebox.showwarning('Thông báo', 'Đăng nhập thất bại!')
+
+name = Tk()
+name.title('Đăng nhập')
+name.geometry('400x200')
+
+userName = Label(name, text = 'Tên đăng nhập:', font=('Consolas', 10, 'bold'), fg= 'red')
+userName.pack()
+
+userpass = Entry(name, width = 20, font = ('consolas', 12))
+userpass.pack()
+
+passWord = Label(name, text = 'Password', font = ('consolas', 10, 'bold'), fg = 'red')
+passWord.pack()
+
+passpass = Entry(name, width = 20, font = ('consolas', 12), show='*')
+passpass.pack()
+
+btnShow = Button(name, text = 'Login', font = ('consolas', 10, 'bold'), fg = 'red', width = 5, height = 1, command=click)
+btnShow.pack()
+
+name.mainloop()
